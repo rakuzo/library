@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Library Project</h1>
+        </div>
+        <div class="sidebar">
+            <form action="">
+                <legend>Book Input</legend>
+                <div class="section">
+                    <label for="Title">
+                        Title
+                        <input type="text" id="Title" name="Title">
+                    </label>
+                </div>
+                <div class="section">
+                    <label for="Author">
+                        Author
+                        <input type="text" id="Author" name="Author">
+                    </label>
+                </div>
+                <div class="section">
+                    <label for="Pages">
+                        Pages
+                        <input type="text" id="Pages" name="Pages">
+                    </label>
+                </div>
+                <div class="section">
+                    <label for="Read-Status">
+                        Read Status
+                        <input type="text" id="Read-Status" name="Read-Status">
+                    </label>
+                </div>
+                <div class="section">
+                    <button type="submit" id="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="main-container">
+            <h2>Book Lists</h2>
+            <div class="book-container">
+                <table>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Read Status</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="footer">
+            Copyleft Dornell
+        </div>
+    </div>
+</body>
+</html>
