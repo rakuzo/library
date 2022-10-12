@@ -14,31 +14,31 @@
             <h1>Library Project</h1>
         </div>
         <div class="sidebar">
-            <form action="">
+            <form action="" class="book-form">
                 <legend>Book Input</legend>
                 <div class="section">
-                    <label for="Title">
+                    <label for="title">
                         Title
-                        <input type="text" id="Title" name="Title" required>
+                        <input type="text" id="title" name="title" required>
                     </label>
                 </div>
                 <div class="section">
-                    <label for="Author">
+                    <label for="author">
                         Author
-                        <input type="text" id="Author" name="Author" pattern="^[^0-9]+$" title="Only accept alphabets! i.e John Titor" required>
+                        <input type="text" id="author" name="author" pattern="^[^0-9]+$" title="Only accept alphabets! i.e John Titor" required>
                     </label>
                 </div>
                 <div class="section">
-                    <label for="Pages">
+                    <label for="pages">
                         Pages
-                        <input type="number" id="Pages" name="Pages" required>
+                        <input type="number" id="pages" name="pages" required>
                     </label>
                 </div>
                 <div class="section">
                     <p>Have you read it yet?</p>
-                    <input type="radio" name="read-status" id="yes" value="true">
+                    <input type="radio" name="read-status" id="yes" value="Yes" required>
                     <label for="yes">Yes</label>
-                    <input type="radio" name="read-status" id="nope" value="false">
+                    <input type="radio" name="read-status" id="nope" value="No">
                     <label for="nope">No</label>
                 </div>
                 <div class="section">
@@ -53,8 +53,16 @@
                     <tr>
                         <th>Title</th>
                         <th>Author</th>
-                        <th>Pages</th>
-                        <th>Read Status</th>
+                        <th class="right-text">Pages</th>
+                        <th class="center-text">Read Status</th>
+                        <th class="center-text">Delete</th>
+                    </tr>
+                    <tr>
+                        <td>Lord of The Rings</td>
+                        <td>J.J Martin</td>
+                        <td class="right-text">358</td>
+                        <td class="center-text">True</td>
+                        <td class="center-text">Delete</td>
                     </tr>
                 </table>
             </div>
