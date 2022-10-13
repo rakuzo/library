@@ -3,20 +3,7 @@ const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const pages = document.querySelector('#pages');
 const reads = document.querySelectorAll('input[name=read-status]');
-const myLibrary = [
-    {
-        title: 'To Kill a Mockingbird',
-        author: 'Harper Lee',
-        pages: 279,
-        isRead: 'No'
-    },
-    {
-        title: 'The Silent Patient',
-        author: 'Alex Michaelides',
-        pages: 265,
-        isRead: 'Yes'
-    },
-];
+const myLibrary = [];
 
 function Book(title, author, pages, isRead) {
     this.title = title;
@@ -37,6 +24,10 @@ function addBookToLibrary(title,author,pages, isRead) {
     const myObj = new Book(title,author,pages, isRead);
     myLibrary.push(myObj);
 }
+
+// Data Example
+addBookToLibrary('To Kill a Mockingbird','Harper Lee',278,'No');
+addBookToLibrary('The Silent Patient','Alex Michaelides',265,'Yes');
 
 function showLibrary() {
     for (let item in myLibrary) {
