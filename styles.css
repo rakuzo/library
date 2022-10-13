@@ -66,6 +66,15 @@ body {
     color: var(--gray-sl);
 }
 
+svg {
+    width: 18px;
+    height: 18px;
+}
+
+svg path {
+    fill: var(--slate-darkest);
+}
+
 .container {
     min-height: 100vh;
     margin: 0;
@@ -99,7 +108,7 @@ input[type='number'] {
 }
 
 table, tr, th, td {
-    border: 1px solid black;
+    border: 1px solid var(--slate-lightest);
     padding: 5px 10px
 }
 
@@ -109,12 +118,24 @@ table {
     text-align: left;
 }
 
+button {
+    background-color: var(--slate-lightest);
+    border-radius: 5px;
+    font-weight: bold;
+    min-width: 3.6rem;
+    min-height: 1.4rem;
+    padding: 2px 6px;
+    border: 0;
+}
+
 .red-button {
-    background-color: red;
+    color: var(--white-gray);
+    background-color: #ff00007a;
 }
 
 .green-button {
-    background-color: green;
+    color: var(--white-gray);
+    background-color: #019b0196;
 }
 
 .right-text {
