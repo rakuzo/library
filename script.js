@@ -3,12 +3,13 @@ const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const pages = document.querySelector('#pages');
 const reads = document.querySelectorAll('input[name=read-status]');
+let deleteBtn = '';
 const myLibrary = [
     {
-    title: 'To Kill a Mockingbird',
-    author: 'Harper Lee',
-    pages: 279,
-    isRead: 'No'
+        title: 'To Kill a Mockingbird',
+        author: 'Harper Lee',
+        pages: 279,
+        isRead: 'No'
     },
     {
         title: 'The Silent Patient',
@@ -62,18 +63,27 @@ function showLibrary() {
 
         const deleteData = document.createElement('td');
         deleteData.setAttribute('class', 'center-text');
-        const deleteText = document.createTextNode('Delete');
-        deleteData.appendChild(deleteText);
+        const delBtn = document.createElement('button');
+        delBtn.setAttribute('class', 'delete');
+        delBtn.innerText = 'Delete';
+        // const deleteText = document.createTextNode('Delete');
+        deleteData.appendChild(delBtn);
         document.getElementById(`book-row${item}`).appendChild(deleteData);
     }
+    deleteBtn = document.querySelector('.delete');
 }
 
 function resetTable() {
-    const newRows = document.querySelectorAll('.book-row')
-    // console.log(newRows);
+    const newRows = document.querySelectorAll('.book-row');
     for (let i = 0; i < newRows.length; i++) {
         newRows[i].parentNode.removeChild(newRows[i]);
     }
+}
+
+function deleteBook(numb) {
+    myLibrary.splice(numb,1);
+    resetTable();
+    showLibrary();
 }
 
 bookForm.addEventListener('submit', (e) => {
@@ -91,3 +101,5 @@ bookForm.addEventListener('submit', (e) => {
     resetTable();
     showLibrary();
 });
+
+showLibrary();
