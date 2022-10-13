@@ -93,6 +93,14 @@ table {
     text-align: left;
 }
 
+.red-button {
+    background-color: red;
+}
+
+.green-button {
+    background-color: green;
+}
+
 .right-text {
     text-align: right;
 }

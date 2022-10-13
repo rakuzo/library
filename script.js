@@ -56,6 +56,11 @@ function showLibrary() {
         isReadData.setAttribute('class', 'center-text');
         const isReadBtn = document.createElement('button');
         isReadBtn.setAttribute('class', 'Read-Button');
+        if (myLibrary[item].isRead === 'Yes') {
+            isReadBtn.classList.add('green-button');
+        } else {
+            isReadBtn.classList.add('red-button');
+        }
         isReadBtn.innerText = myLibrary[item].isRead;
         isReadBtn.addEventListener('click', () => {
             myLibrary[item].changeStatus();
