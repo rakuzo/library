@@ -3,7 +3,6 @@ const title = document.querySelector('#title');
 const author = document.querySelector('#author');
 const pages = document.querySelector('#pages');
 const reads = document.querySelectorAll('input[name=read-status]');
-let deleteBtn = '';
 const myLibrary = [
     {
         title: 'To Kill a Mockingbird',
@@ -26,10 +25,17 @@ function Book(title, author, pages, isRead) {
     this.isRead = isRead;
 }
 
+Book.prototype.changeStatus = function() {
+    if (this.isRead === 'No') {
+        this.isRead = 'Yes';
+    } else {
+        this.isRead = 'No';
+    }
+}
+
 function addBookToLibrary(title,author,pages, isRead) {
     const myObj = new Book(title,author,pages, isRead);
     myLibrary.push(myObj);
-    console.log(myLibrary);
 }
 
 function showLibrary() {
@@ -57,20 +63,31 @@ function showLibrary() {
 
         const isReadData = document.createElement('td');
         isReadData.setAttribute('class', 'center-text');
-        const isReadText = document.createTextNode(myLibrary[item].isRead);
-        isReadData.appendChild(isReadText);
+        const isReadBtn = document.createElement('button');
+        isReadBtn.setAttribute('class', 'Read-Button');
+        isReadBtn.innerText = myLibrary[item].isRead;
+        isReadBtn.addEventListener('click', () => {
+            myLibrary[item].changeStatus();
+            resetTable();
+            showLibrary();
+        });
+        isReadData.appendChild(isReadBtn);
         document.getElementById(`book-row${item}`).appendChild(isReadData);
 
         const deleteData = document.createElement('td');
         deleteData.setAttribute('class', 'center-text');
         const delBtn = document.createElement('button');
         delBtn.setAttribute('class', 'delete');
+        delBtn.setAttribute('data-key', `${item}`);
         delBtn.innerText = 'Delete';
-        // const deleteText = document.createTextNode('Delete');
+        delBtn.addEventListener('click', e => {
+            myLibrary.splice(e.target.dataset.key,1);
+            resetTable();
+            showLibrary();
+        })
         deleteData.appendChild(delBtn);
         document.getElementById(`book-row${item}`).appendChild(deleteData);
     }
-    deleteBtn = document.querySelector('.delete');
 }
 
 function resetTable() {
@@ -78,12 +95,6 @@ function resetTable() {
     for (let i = 0; i < newRows.length; i++) {
         newRows[i].parentNode.removeChild(newRows[i]);
     }
-}
-
-function deleteBook(numb) {
-    myLibrary.splice(numb,1);
-    resetTable();
-    showLibrary();
 }
 
 bookForm.addEventListener('submit', (e) => {
