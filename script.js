@@ -80,18 +80,21 @@ function showLibrary() {
         const iconSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         const iconPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
         iconSvg.setAttribute('viewBox', '0 0 24 24');
+        iconSvg.setAttribute('data-key', `${item}`);
+        iconSvg.classList.add('del-icon');
         iconPath.setAttribute(
             'd',
             'M9,3V4H4V6H5V19A2,2 0 0,0 7,21H17A2,2 0 0,0 19,19V6H20V4H15V3H9M7,6H17V19H7V6M9,8V17H11V8H9M13,8V17H15V8H13Z'
         );
+        iconPath.setAttribute('data-key', `${item}`);
         iconSvg.appendChild(iconPath);
         delBtn.appendChild(iconSvg);
-        // delBtn.innerText = 'Delete';
         delBtn.addEventListener('click', e => {
+            // console.log(e.target.dataset.key);
             myLibrary.splice(e.target.dataset.key,1);
             resetTable();
             showLibrary();
-        })
+        });
         deleteData.appendChild(delBtn);
         document.getElementById(`book-row${item}`).appendChild(deleteData);
     }
