@@ -35,6 +35,7 @@ function showLibrary() {
     for (let item in myLibrary) {
         const tableRow = document.createElement('tr');
         tableRow.setAttribute('id', `book-row${item}`)
+        tableRow.setAttribute('class', 'book-row');
         document.getElementById('book-list').appendChild(tableRow);
 
         const titleData = document.createElement('td');
@@ -67,6 +68,14 @@ function showLibrary() {
     }
 }
 
+function resetTable() {
+    const newRows = document.querySelectorAll('.book-row')
+    // console.log(newRows);
+    for (let i = 0; i < newRows.length; i++) {
+        newRows[i].parentNode.removeChild(newRows[i]);
+    }
+}
+
 bookForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let tempTitle = title.value;
@@ -79,4 +88,6 @@ bookForm.addEventListener('submit', (e) => {
         }
     }
     addBookToLibrary(tempTitle, tempAuthor, tempPages, readStatus);
+    resetTable();
+    showLibrary();
 });
