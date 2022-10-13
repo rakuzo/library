@@ -5,18 +5,19 @@ const pages = document.querySelector('#pages');
 const reads = document.querySelectorAll('input[name=read-status]');
 const myLibrary = [];
 
-function Book(title, author, pages, isRead) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.isRead = isRead;
-}
-
-Book.prototype.changeStatus = function() {
-    if (this.isRead === 'No') {
-        this.isRead = 'Yes';
-    } else {
-        this.isRead = 'No';
+class Book {
+    constructor(title, author, pages, isRead) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.isRead = isRead;
+    }
+    changeStatus() {
+        if (this.isRead === 'No') {
+            this.isRead = 'Yes';
+        } else {
+            this.isRead = 'No';
+        }
     }
 }
 
