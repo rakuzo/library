@@ -71,10 +71,6 @@ svg {
     height: 18px;
 }
 
-svg path {
-    fill: var(--slate-darkest);
-}
-
 .container {
     min-height: 100vh;
     margin: 0;
