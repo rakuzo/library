@@ -48,9 +48,22 @@ table {
 }
 
 /* CSS Reset End Here */
+:root {
+    --slate-darkest: #0f172a;
+    --slate-darker: #1e293b;
+    --slate-dark: #334155;
+    --slate: #475569;
+    --slate-light: #64748b;
+    --slate-lighter: #94a3b8;
+    --slate-lightest: #cbd5e1;
+    --gray-sl: #e2e8f0;
+    --white-gray: #f1f5f9;
+    --white: #f8fafc;
+}
 
 body {
     min-height: 100vh;
+    color: var(--gray-sl);
 }
 
 .container {
@@ -64,13 +77,13 @@ body {
 }
 
 .header {
-    background-color: aquamarine;
+    background-color: var(--slate-darkest);
     grid-column: 1/3;
     padding: 10px;
 }
 
 .sidebar {
-    background-color: coral;
+    background-color: var(--slate-darker);
     padding: 10px;
 }
 
@@ -81,7 +94,7 @@ input[type='number'] {
 }
 
 .main-container {
-    background-color: rgb(212, 84, 137);
+    background-color: var(--slate-dark);
     padding: 10px;
 }
 
@@ -117,7 +130,7 @@ th {
 }
 
 .footer {
-    background-color: chartreuse;
+    background-color: var(--slate-darkest);
     grid-column: 1/3;
     padding: 5px;
     text-align: center;
