@@ -159,8 +159,15 @@ input[type='number'] {
     padding: 10px;
 }
 
+h2 {
+    font-weight: bold;
+    text-align: center;
+}
+
 table, tr, th, td {
     border: 1px solid var(--slate-lightest);
+    background-color: var(--slate-darker);
+    box-shadow: 1px 1px 3px var(--slate-darkest);
     padding: 5px 10px
 }
 
