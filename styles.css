@@ -165,9 +165,8 @@ h2 {
 }
 
 table, tr, th, td {
-    border: 1px solid var(--slate-lightest);
+    border: 3px solid var(--slate-dark);
     background-color: var(--slate-darker);
-    box-shadow: 1px 1px 3px var(--slate-darkest);
     padding: 5px 10px
 }
 
