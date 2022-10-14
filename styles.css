@@ -81,7 +81,7 @@ svg {
 
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 10vh 1fr auto;
+    grid-template-rows: 100px 1fr auto;
 }
 
 .header {
@@ -110,12 +110,46 @@ h1 {
 .sidebar {
     background-color: var(--slate-darker);
     box-shadow: 2px 2px 3px var(--slate-darkest);
-    padding: 10px;
+    padding: 10px 20px;
     z-index: 1;
+}
+
+/* form {
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(6,50px);
+    gap: 10px;
+} */
+
+legend {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-bottom: 15px;
+}
+
+.section>p {
+    margin-bottom: 8px;
+}
+
+.section.end {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.section.end>button {
+    flex: 0 1 150px;
 }
 
 input[type='text'],
 input[type='number'] {
+    margin-top: 8px;
     width: min(90%, 300px);
     display: block;
 }
